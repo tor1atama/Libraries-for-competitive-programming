@@ -14,7 +14,7 @@ struct RMQ{
             i/=2;
         }
     }
-	long long get(int i){
+    long long get(int i){
 		return a[n+i];
 	}
     long long prod(int l,int r){
