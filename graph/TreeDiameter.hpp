@@ -7,16 +7,13 @@ for(int i=0;i<n-1;++i){
     g[a].emplace_back(b);
     g[b].emplace_back(a);
 }
-vector<int> dist(n);
-int d=-1,u;
-function<void(int,int)> dfs=[&](int now,int pre){
-    if(pre!=-1) dist[now]=dist[pre]+1;
-    else dist[now]=0;
-    if(chmax(d,dist[now])) u=now;
+function<pair<int,int>(int,int)> dfs=[&](int pre,int now){
+    int dist=0,v=now;
     for(auto to:g[now]){
-        if(to!=pre) dfs(to,now);
+        if(to==pre) continue;
+        auto [d,u]=dfs(now,to);
+        if(chmax(dist,d+1)) v=u;
     }
-};
-dfs(0,-1);
-dfs(u,-1);
-cout<<d<<endl;
+    return make_pair(dist,v);
+}; //return {distance, farthest point}
+cout<<dfs(-1,dfs(-1,0).second).first<<endl;
