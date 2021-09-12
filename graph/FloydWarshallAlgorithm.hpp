@@ -1,13 +1,14 @@
 //n:the number of vertices
 //m:the number of edges
-vector<vector<long long>> d(n,vector<long long>(n,INF));
+int n,m; cin>>n>>m;
+vector<vector<long long>> d(n,vector<long long>(n,INF)); //d[i][j]: distance from i to j
 for(int i=0;i<m;++i){
     int a,b;
     ll c;
     cin>>a>>b>>c;
-    --a; --b;//1-indexed to 0-indexed
+    --a; --b; //to 0-indexed
     d[a][b]=c;
-    d[b][a]=c;//if undirected graph
+    d[b][a]=c; //if undirected graph
 }
 for(int i=0;i<n;++i){
     d[i][i]=0;
