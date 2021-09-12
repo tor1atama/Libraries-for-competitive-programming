@@ -11,12 +11,12 @@ vector<int> dist(n);
 int d=-1,u;
 function<void(int,int)> dfs=[&](int now,int pre){
     if(pre!=-1) dist[now]=dist[pre]+1;
+    else dist[now]=0;
     if(chmax(d,dist[now])) u=now;
     for(auto to:g[now]){
         if(to!=pre) dfs(to,now);
     }
 };
 dfs(0,-1);
-dist=vector<int>(n,0);
 dfs(u,-1);
 cout<<d<<endl;
