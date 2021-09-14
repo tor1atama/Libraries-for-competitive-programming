@@ -20,7 +20,7 @@ struct LCA{
             }
         }
     }
-    
+    // lca of u & v
     int query(int u,int v){
         if(depth[u]<depth[v]) swap(u,v);
         for(int i=0;i<K;++i) if((depth[u]-depth[v])&(1<<i)) u=parent[i][u];
