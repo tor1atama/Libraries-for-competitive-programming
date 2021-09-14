@@ -1,4 +1,5 @@
-int n; cin>>n;
+int n; //number of vertices
+cin>>n;
 vector<vector<int>> g(n);
 for(int i=0;i<n-1;++i){
     int a,b;
@@ -7,7 +8,7 @@ for(int i=0;i<n-1;++i){
     g[a].emplace_back(b);
     g[b].emplace_back(a);
 }
-function<pair<int,int>(int,int)> dfs=[&](int pre,int now){
+function<pair<int,int> (int,int)> dfs=[&](int pre,int now){
     int dist=0,v=now;
     for(auto to:g[now]){
         if(to==pre) continue;
