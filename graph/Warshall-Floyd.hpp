@@ -1,6 +1,5 @@
-//n:the number of vertices
-//m:the number of edges
-int n,m; cin>>n>>m;
+int n,m; //n:the number of vertices, m:the number of edges
+cin>>n>>m;
 vector<vector<long long>> d(n,vector<long long>(n,INF)); //d[i][j]: distance from i to j
 for(int i=0;i<m;++i){
     int a,b;
