@@ -25,4 +25,5 @@ struct UnionFind {
         num--;
         return 1;
     }
+    bool all_connected(){return num==1;}
 };
