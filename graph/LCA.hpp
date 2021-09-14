@@ -9,9 +9,9 @@ struct LCA{
         depth.assign(N,-1);
         function<void(const vector<vector<int>> &,int,int,int)> dfs=
             [&](const vector<vector<int>> &G,int pre,int now,int d){
-            parent[0][now]=pre;
-            depth[now]=d;
-            for(auto to:G[now]) if(to!=pre) dfs(G,now,to,d+1);
+                parent[0][now]=pre;
+                depth[now]=d;
+                for(auto to:G[now]) if(to!=pre) dfs(G,now,to,d+1);
         };
         dfs(G,-1,root,0);
         for(int i=0;i<K-1;++i){
