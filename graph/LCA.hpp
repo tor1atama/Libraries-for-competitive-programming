@@ -1,20 +1,20 @@
 struct LCA{
-    vector<vector<int>> parent; //dist(v,parent[v][i])=2^i
+    vector<vector<int>> parent; //dist(v,parent[i][v])=2^i
     vector<int> depth;
-    int K=1;
-    LCA(const vector<vector<int>> &G,int root=0){
-        int N=(int)G.size();
-        while((1<<K)<N) ++K;
-        parent.assign(K,vector<int>(N,-1));
-        depth.assign(N,-1);
+    int k=1;
+    LCA(const vector<vector<int>> &g,int root=0){
+        int n=(int)g.size();
+        while((1<<k)<n) ++k;
+        parent.assign(k,vector<int>(n,-1));
+        depth.assign(n,-1);
         function<void(int,int,int)> dfs=[&](int pre,int now,int d){
             parent[0][now]=pre;
             depth[now]=d;
-            for(auto to:G[now]) if(to!=pre) dfs(now,to,d+1);
+            for(auto to:g[now]) if(to!=pre) dfs(now,to,d+1);
         };
         dfs(-1,root,0);
-        for(int i=0;i<K-1;++i){
-            for(int v=0;v<N;++v){
+        for(int i=0;i<k-1;++i){
+            for(int v=0;v<n;++v){
                 if(parent[i][v]<0) parent[i+1][v]=-1;
                 else parent[i+1][v]=parent[i][(parent[i][v])];
             }
@@ -23,9 +23,9 @@ struct LCA{
     // lca of u & v
     int query(int u,int v){
         if(depth[u]<depth[v]) swap(u,v);
-        for(int i=0;i<K;++i) if((depth[u]-depth[v])&(1<<i)) u=parent[i][u];
+        for(int i=0;i<k;++i) if((depth[u]-depth[v])&(1<<i)) u=parent[i][u];
         if(u==v) return u;
-        for(int i=K-1;i>=0;--i){
+        for(int i=k-1;i>=0;--i){
             if(parent[i][u]!=parent[i][v]){
                 u=parent[i][u];
                 v=parent[i][v];
