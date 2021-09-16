@@ -2,7 +2,7 @@ vector<int> Z_Algorithm(string &s){
     int n=(int)s.size();
     vector<int> res(n);
     res[0]=n; //sometimes this value should be 0 (e.g. z of target+"$"+searched)
-    int l=r=0;
+    int l=0,r=0;
     for(int i=1;i<n;++i){
         if(r<i){
             l=r=i;
