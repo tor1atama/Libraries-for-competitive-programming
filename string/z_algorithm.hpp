@@ -1,4 +1,4 @@
-vector<int> Z_Algorithm(string &s){
+vector<int> z_algorithm(string &s){
     int n=(int)s.size();
     vector<int> res(n);
     res[0]=n; //sometimes this value should be 0 (e.g. z of target+"$"+searched)
