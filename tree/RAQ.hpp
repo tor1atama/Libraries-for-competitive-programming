@@ -8,7 +8,7 @@ struct RAQ{
         a.resize(n*2,e);
     }
     long long get(int i){
-        long long res=0;
+        long long res=e;
         i+=n;
         while(i){
             res+=a[i];
