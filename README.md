@@ -3,7 +3,7 @@
 ## c++ library for solving algo problems of AtCoder
 
 ### datastructures
- ####   ・UnionFind.hpp
+####   ・UnionFind.hpp
 disjoint-set data structure
 
 ### graph
