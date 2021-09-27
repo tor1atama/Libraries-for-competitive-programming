@@ -22,6 +22,8 @@ calculate distances between all pair of verticles of a given graph in O(N^3)
 ### math
 #### ・matrix
 matrix mainly for dp
+#### ・rational
+rational number
 
 ### string
 #### ・z_algorithm.hpp
