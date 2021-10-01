@@ -1,6 +1,6 @@
 # Libraries-for-competitive-programming
 
-## c++ library for solving algo problems of AtCoder
+## c++ library for algo problems of AtCoder
 
 ### datastructures
 ####   ・UnionFind.hpp
