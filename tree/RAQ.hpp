@@ -1,14 +1,14 @@
-struct RAQ{
-    const long long e=0;
+template<class T> struct RAQ{
+    const T e=0;
     int n;
-    vector<long long> a;
+    vector<T> a;
     RAQ(int n_){
         n=1;
         while(n<n_*2) n*=2;
         a.resize(n*2,e);
     }
-    long long get(int i){
-        long long res=e;
+    T get(int i){
+        T res=e;
         i+=n;
         while(i){
             res+=a[i];
@@ -16,7 +16,7 @@ struct RAQ{
         }
         return res;
     }
-    void add(int l,int r,long long x){
+    void add(int l,int r,T x){
         l+=n;
         r+=n;
         while(l<r){
