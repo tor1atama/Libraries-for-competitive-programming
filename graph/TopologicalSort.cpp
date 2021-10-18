@@ -17,7 +17,7 @@ while(!st.empty()){
     order.emplace_back(now);
     for(auto to:g[now]){
         --e[to];
-        if(e[to]==0) st.push(j);
+        if(e[to]==0) st.push(to);
     }
 }
 //bool dag=order.size()==n;
