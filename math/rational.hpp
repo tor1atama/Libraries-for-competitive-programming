@@ -38,11 +38,7 @@ struct rational{
             if(other.num==1) return 1;
             else return 0;
         }
-        if (deno*other.deno>0){
-            return num*other.deno<deno*other.num;
-        }else{
-            return num*other.deno>deno*other.num;
-        }
+        return num*other.deno<deno*other.num;
     }
     bool operator>(const rational &other){
         return !(*this<=other);
