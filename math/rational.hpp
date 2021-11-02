@@ -29,7 +29,6 @@ struct rational{
         return !(*this==other);
     }
     bool operator<(const rational &other){
-        if(*this==other) return 0;
         if(deno==0){
             if(num==1) return 0;
             else return 1;
