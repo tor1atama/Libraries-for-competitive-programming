@@ -6,7 +6,7 @@ struct rational{
         return gcd(b,a%b);
     }
     rational(long long num_=0,long long deno_=1): num(num_),deno(deno_){
-        if(num==0&&deno==0){
+        if(num==0 && deno==0){
             cout<<"error: 0/0"<<endl;
             return;
         }
